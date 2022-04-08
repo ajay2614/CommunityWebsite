@@ -1,0 +1,43 @@
+<body>
+    <div id="welcome">
+        <h1 id="h1">WELCOME</h1>
+    </div>
+    <div id="div1">
+        <form>
+            <button type="button" class="btn btn-secondary" (click)="login()" id="login">LOGIN</button>
+        </form>
+        <form>
+            <button type="button" class="btn btn-secondary" (click)="register()" id="register">REGISTER</button>
+        </form>
+    </div>
+    <div id = "titleproducts">
+        <h2>
+            PRODUCTS
+        </h2>
+    </div>
+    <div id = "titleusers">
+        <h2>
+            USERS
+        </h2>
+    </div>
+    <div id = "titlereviews">
+        <h2>
+            REVIEWS
+        </h2>
+    </div>
+    <div id = "products" >
+        <h1>
+            {{totalProducts}}
+        </h1>
+    </div>
+    <div id = "users">
+        <h1>
+            {{totalUsers}} 
+        </h1>
+    </div>
+    <div id = "reviews">
+        <h1>
+            {{totalProductReviews}}
+        </h1>
+    </div>
+</body>

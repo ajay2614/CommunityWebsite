@@ -1,0 +1,75 @@
+<body>
+
+    <div id="divlogoutbutton">
+        <Button id="logoutbutton" (click) = "logout()">LOGOUT</Button>
+    </div>
+
+<div id="dashboardform">
+    <h1 id="dashboardformheading">
+        <strong>
+            SEARCH PRODUCTS 
+        </strong>   
+    </h1>
+</div>
+ 
+<div id="dashboard">
+    <form (ngSubmit) = "getProducts()">
+        <div class="form-group row" id="productcode">
+            <div id="productcodelabel">
+                <h3>
+                    Product Code
+                </h3>
+            </div>
+          <input type="text" name="username" id="inputproductcode" [(ngModel)]="product.productCode">
+        </div>
+        <div class="form-group row" id="productbrand">
+            <div id="productbrandlabel">
+                <h3>
+                    Product Brand
+                </h3>
+            </div>
+          <input type="text" name="password" id="inputproductbrand" [(ngModel)]="product.brand">
+        </div>
+        <div class="form-group row" id="productname">
+            <div id="productnamelabel">
+                <h3>
+                    Product Name
+                </h3>
+            </div>
+          <input type="text" name="username" id="inputproductname" [(ngModel)]="product.productName">
+        </div>
+        <button type="submit" id="buttonsearch">SUBMIT</button>
+    </form>
+    </div>
+
+    <div id = "titleproducts">
+        <h2>
+            PRODUCTS
+        </h2>
+    </div>
+    <div id = "titleusers">
+        <h2>
+            USERS
+        </h2>
+    </div>
+    <div id = "titlereviews">
+        <h2>
+            REVIEWS
+        </h2>
+    </div>
+    <div id = "products" >
+        <h1>
+            {{totalProducts}}
+        </h1>
+    </div>
+    <div id = "users">
+        <h1>
+            {{totalUsers}} 
+        </h1>
+    </div>
+    <div id = "reviews">
+        <h1>
+            {{totalProductReviews}}
+        </h1>
+    </div>
+</body>

@@ -1,0 +1,87 @@
+
+<body>
+<div id="dropdown">
+    <button type="submit" (click) = "postProduct()" id="postproduct">POST PRODUCT</button> 
+    <button id="dashboard" (click)="dashboard()" >DASHBOARD</button>
+    <button id="dropbtn" (click)="dropdown1()">FILTER ↓</button>
+    <button id="logoutbtn" type="submit" (click) = "logout()">LOGOUT</button>
+</div>
+<div *ngIf="dropdown" id="dropdownmenu">
+    <form (ngSubmit) = "filterbycode()">
+        <input type="number" name="username" id="inputfiltercode" placeholder="     Enter Product Code" [(ngModel)]="productCode">
+        <button id ="btnfiltercode">Filter By Code</button>
+    </form>
+    <form (ngSubmit) = "filterbybrand()">
+            <input type="text" name="username" id="inputfilterbrand" placeholder="     Enter Product Brand" [(ngModel)]="productBrand">
+            <button type="submit" id ="btnfilterbrand">Filter By Brand</button>
+    </form>
+    <form (ngSubmit) = "filterbyname()">
+        <input type="text" name="username" id="inputfiltername" placeholder="     Enter Product Name" [(ngModel)]="productName">
+        <button id ="btnfiltername">Filter by Name</button>
+    </form>
+  </div>
+
+
+    
+  <div id="divtablepageheading" *ngIf="result">
+	<h1 id="tablepageheading">
+	
+        <b>SEARCH RESULT</b>
+	</h1>
+    </div>
+    <div *ngIf="result" id="divtable">
+        <table class="table table-bordered" id="table">
+            <tr>
+            <th>
+            Product Code
+            </th>
+            <th>
+            Product Brand
+            </th>
+            <th>
+            Product Name
+            </th>
+            <th>
+            Post&nbsp;Review
+            </th>
+            <th>
+            Get&nbsp;Reviews
+            </th>
+            </tr>
+            <tr *ngFor = 'let p of products;let i = index;'>
+                <td>
+                    {{p.productCode}}          
+                </td>
+                <td>
+                    {{p.brand}}
+                </td>
+                <td>
+                    {{p.productName}}
+                </td>
+                <td>
+                    <form  (ngSubmit) = "postReview(p.productCode)">
+                        <button class="btn btn-primary" id="postreview">
+                            <p id="postreviewp">
+                                Post&NonBreakingSpace;Review
+                            </p>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form  (ngSubmit) = "getAllReviews(p.productCode)">
+                        <button class="btn btn-primary" id="getreview">
+                            <p id="postreviewp">
+                                Get All Review
+                            </p></button>
+                    </form>
+                </td>
+            </tr>
+            </table>
+        </div>
+    
+    <div *ngIf="error" id="error">                
+        <h1>
+            OOPS,NO PRODUCTS YET
+        </h1>
+    </div>
+</body>

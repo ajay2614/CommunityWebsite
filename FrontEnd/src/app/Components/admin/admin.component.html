@@ -1,0 +1,79 @@
+
+<body>
+<div id="dropdown">
+    <button id="logoutbtn" type="submit" (click) = "logout()">LOGOUT</button>
+</div>
+
+<div id="divtablepageheading" *ngIf="result">
+	<h1 id="tablepageheading">	
+        <b>ALL REVIEWS</b>
+	</h1>
+</div>
+<div *ngIf="result" id="divtable">
+<table class="table table-bordered" id="table">
+    <tr>
+    <th>
+    Review Id
+    </th> 
+    <th>
+    User 
+    <br>
+    Email
+    </th>
+    <th>
+        Product Code
+    </th>
+    <th>
+    Heading
+    </th>
+    <th>
+    Reviews
+    </th>
+    <th>
+    Approval
+    </th>
+    <th>
+    Approve Review    
+    </th>
+    <th>
+    Reject Review   
+    </th>
+    </tr>
+    <tr *ngFor = 'let p of productDetails;let i = index;'>
+        <td>
+            {{p.id}}          
+        </td>
+        <td>
+            {{p.userid}}
+        </td>
+        <td>
+            {{p.productid}}
+        </td>
+        <td>
+            {{p.heading}}
+        </td>
+        <td>
+            {{p.review}}
+        </td>
+        <td>
+            {{p.approval}}
+        </td>
+        <td>
+                <button  class="btn btn-primary" (click) = approveReview(p.id) id="approvereview">
+                    Aprrove Review</button>     
+        </td>
+        <td>
+            <div>
+                <button class="btn btn-danger" (click) = rejectReview(p.id) id="rejectreview">Reject <br>Review</button>
+            </div>  
+        </td>
+    </tr>
+    </table>
+    </div>
+
+    <div id="error" *ngIf="error">
+        <h1>
+            NO REVIEWS YET
+        </h1>
+    </div>
+</body>

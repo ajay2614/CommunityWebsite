@@ -1,0 +1,33 @@
+<body>
+    <div id="divregisterbutton">
+        <Button id="registerbutton" (click) = "register()">REGISTER</Button>
+    </div>
+<div id="loginform">
+    <h1 id="loginformheading">
+        <strong>
+            LOGIN FORM 
+        </strong>   
+    </h1>
+</div>
+<div id="login">
+    <form (ngSubmit) = "login()">
+        <div class="form-group row" id="username">
+            <div id="usernamelabel">
+                <h3>
+                    USERNAME
+                </h3>
+            </div>
+          <input type="text" name="username" id="inputusername" [(ngModel)]="credentials.username">
+        </div>
+        <div class="form-group row" id="password">
+            <div id="passwordlabel">
+                <h3>
+                    PASSWORD
+                </h3>
+            </div>
+          <input type="password" name="password" id="inputpassword" [(ngModel)]="credentials.password">
+        </div>
+        <button type="submit" id="buttonlogin">SUBMIT</button>
+    </form>
+    </div>
+</body>
