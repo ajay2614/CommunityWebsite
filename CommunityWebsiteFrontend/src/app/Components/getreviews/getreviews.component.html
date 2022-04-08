@@ -1,0 +1,65 @@
+<body>
+<div id="dropdown">
+    <button type="submit" (click) = "back()" id="postproduct">BACK</button> 
+    <button id="dashboard" (click)="dashboard()" id="dashboard">DASHBOARD</button>
+    <button id="logoutbtn" type="submit" (click) = "logout()">LOGOUT</button>
+</div>
+
+<div id="divtablepageheading" *ngIf="result">
+	<h1 id="tablepageheading">
+        <b>PRODUCT REVIEWS</b>
+	</h1>
+    </div>
+<div id="divtable" *ngIf="result">
+<table class="table table-bordered" id="table">
+    <tr>
+    <th>
+    USER EMAIL
+    </th>
+    <th>
+    PRODUCT ID
+    </th>
+    <th>
+    HEADING
+    </th>
+    <th>
+    REVIEW
+    </th>
+    <th>
+    RATINGS    
+    </th>
+    </tr>
+    <tr *ngFor = 'let p of productDetails;let i = index;'>
+        <td>
+            {{p.userid}}          
+        </td>
+        <td>
+            {{p.productid}}
+        </td>
+        <td>
+            {{p.heading}}
+        </td>
+        <td>
+            {{p.review}}
+        </td>
+        <td>
+            {{p.ratings}}
+        </td>
+    </tr>
+    </table>
+</div>
+
+<div id="totalratings" *ngIf="result">
+    <h1>Total Ratings</h1>
+</div>
+<div id="totalratingsvalue" *ngIf="result">
+    <h2 id="ratingsvalueheading">
+    {{(productRatings/reviewsTotal).toFixed(2)}}
+    </h2>    
+</div>
+<div *ngIf="error" id= "error">
+    <h1>
+        OOPS NO REVIEWS YET
+    </h1>
+</div>
+</body>

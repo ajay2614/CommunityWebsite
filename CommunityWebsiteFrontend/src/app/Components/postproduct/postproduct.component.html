@@ -1,0 +1,43 @@
+<body>
+    <div id="dropdown">
+        <button type="submit" (click) = "back()" id="back">BACK</button> 
+        <button id="logoutbtn" type="submit" (click) = "logout()">LOGOUT</button>
+    </div>
+
+<div id="postproductform">
+    <h1 id="postproductformheading">
+        <strong>
+            POST FOR REVIEW
+         </strong>   
+    </h1>
+    </div>
+<div id="postproduct">
+    <form>
+        <div class="form-group row" id="productcode">   
+            <div id="productcodelabel">
+                <h3>
+                    PRODUCT CODE
+                </h3>
+            </div>
+            <input type = "number" name="productcode" id="inputproductcode" required [(ngModel)]="productcode">
+        </div>
+        <div class="form-group row" id="productbrand">
+            <div id="productbrandlabel">
+                <h3>
+                    PRODUCT BRAND
+                </h3>
+            </div>
+            <input type = "text" name="productbrand" id="inputproductbrand" required [(ngModel)]="productbrand">
+        </div>
+        <div class="form-group row" id="productname">
+            <div id="productnamelabel">
+                <h3>
+                    PRODUCT NAME
+                </h3>
+            </div>
+            <input type = "text" name="productname" id="inputproductname" required [(ngModel)]="productname">
+        </div>
+    <button type="button" id="submitbutton" class="btn btn-success" (click)="postForReview()">Submit</button>
+    </form>
+</div>
+</body>

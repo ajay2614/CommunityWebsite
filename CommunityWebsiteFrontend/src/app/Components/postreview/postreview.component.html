@@ -1,0 +1,61 @@
+<body>
+<div id="dropdown">
+    <button type="submit" (click) = "back()" id="postproduct">BACK</button> 
+    <button id="dashboard" (click)="dashboard()" id="dashboard">DASHBOARD</button>
+    <button id="logoutbtn" type="submit" (click) = "logout()">LOGOUT</button>
+</div>
+<div id="addreviewform">
+    <h1 id="addreviewheading">
+        <strong>
+            ADD REVIEW 
+        </strong>   
+    </h1>
+</div>
+<div id="addreview">
+    <form>
+        <div class="form-group row" id="useremail">   
+            <div id="useremaillabel">
+                <h3>
+                    USER EMAIL
+                </h3>
+            </div>
+            <input value="{{username}}" id="inputuseremail" readonly>
+        </div>
+        <div class="form-group row" id="productcode">
+            <div id="productcodelabel">
+                <h3>
+                    PRODUCT
+                    <br>
+                    CODE
+                </h3>
+            </div>
+            <input value="{{productcode}}" id="inputproductcode" readonly>
+        </div>
+        <div class="form-group row" id="heading">
+            <div id="headinglabel">
+                <h3>
+                    HEADING
+                </h3>
+            </div>
+            <input type = "text" name="studentdob" id="inputheading" required [(ngModel)]="heading">
+        </div>
+        <div class="form-group row" id="review">
+            <div id="reviewlabel">
+                <h3>
+                    REVIEW
+                </h3>
+            </div>
+            <input type = "text" name="studentscores" id="inputreview"required [(ngModel)]="review">
+        </div>
+        <div class="form-group row" id="ratings">
+            <div id="ratingslabel">
+                <h3>
+                    RATINGS
+                </h3>
+            </div>
+            <mat-slider thumbLabel tickInterval="auto" min="1" max="5" name="range" name="ratings" id="inputratings" [(ngModel)]="ratings"></mat-slider>
+        </div>
+    <button type="button" id="submitbutton" class="btn btn-success" (click)="postReview()">Submit</button>
+    </form>
+</div>
+</body>
